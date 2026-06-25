@@ -11,23 +11,39 @@
 [ext_resource type="Texture2D" uid="uid://cq6ay81igrcx6" path="res://Sprites/MC/idle anim/idle_back.png" id="8_oprun"]
 [ext_resource type="Texture2D" uid="uid://de0wfefkskf31" path="res://Sprites/MC/idle anim/idle_right.png" id="9_a8ls1"]
 [ext_resource type="PackedScene" uid="uid://cs85g36tlohap" path="res://scenes/combat/shuriken_spawner.tscn" id="10_y4r1p"]
+[ext_resource type="Texture2D" uid="uid://dlfdpy451ww6p" path="res://Sprites/MC/lutz scheme/lutz1.png" id="11_bj30b"]
 [ext_resource type="Script" uid="uid://xutvfcxb03py" path="res://Scripts/levelup/options.gd" id="11_d2wvv"]
 [ext_resource type="Script" uid="uid://cpfh0xv0nbsh3" path="res://Scripts/UI/player_canvas.gd" id="11_jej6c"]
+[ext_resource type="Texture2D" uid="uid://610hqp1aylwx" path="res://Sprites/MC/lutz scheme/lutz2.png" id="12_jc3p3"]
 [ext_resource type="Script" uid="uid://cgpc4ly5hs6ki" path="res://Scripts/levelup/upgrade.gd" id="13_fulsm"]
+[ext_resource type="Texture2D" uid="uid://d4bhnx2ys8w0y" path="res://Sprites/MC/lutz scheme/lutz3.png" id="13_hax0n"]
 [ext_resource type="Resource" uid="uid://b4f1r11mp6aai" path="res://Resources/combat/upgrade_dmg.tres" id="14_4r5pv"]
+[ext_resource type="Texture2D" uid="uid://kqswme3sd7ee" path="res://Sprites/MC/lutz scheme/lutz4.png" id="14_t4otl"]
 [ext_resource type="Resource" uid="uid://dtharmkcltyig" path="res://Resources/combat/upgrade_hp.tres" id="15_60mlk"]
+[ext_resource type="Texture2D" uid="uid://bjwsv1kdetjmq" path="res://Sprites/MC/spin scheme/back_pose_2.png" id="15_j2b1d"]
+[ext_resource type="Texture2D" uid="uid://73utuokqn4tf" path="res://Sprites/MC/spin scheme/front_pose_2.png" id="16_cs1tg"]
 [ext_resource type="Resource" uid="uid://bo4irddnqjwup" path="res://Resources/combat/upgrade_shurikens.tres" id="16_i4ail"]
+[ext_resource type="Texture2D" uid="uid://b7q1s8msqifkq" path="res://Sprites/MC/spin scheme/left_pose_2.png" id="17_2dvfe"]
 [ext_resource type="Resource" uid="uid://dgd0p2pl356w3" path="res://Resources/combat/upgrade_shuriken_speed.tres" id="17_a38lo"]
 [ext_resource type="Resource" uid="uid://dfcl3vnvrxjen" path="res://Resources/combat/upgrade_speed.tres" id="18_4ni07"]
+[ext_resource type="Texture2D" uid="uid://dqj1qt3nqfrob" path="res://Sprites/MC/spin scheme/right_pose_2.png" id="18_giy8y"]
+[ext_resource type="Texture2D" uid="uid://k3box3yi70g4" path="res://Sprites/MC/walking anim/idle_front_walk_1.png" id="19_fdfoy"]
+[ext_resource type="Texture2D" uid="uid://b2130bibg1v34" path="res://Sprites/MC/walking anim/idle_front_walk_2.png" id="20_hhpqf"]
+[ext_resource type="Texture2D" uid="uid://4tehr1e6mexn" path="res://Sprites/MC/walking anim/idle_left_walking_1.png" id="21_g5jhy"]
+[ext_resource type="Texture2D" uid="uid://65lwdmjjmp81" path="res://Sprites/MC/walking anim/idle_left_walk_2.png" id="22_holxr"]
+[ext_resource type="Texture2D" uid="uid://co7ai3tsjlsvn" path="res://Sprites/MC/walking anim/idle_right_walking_1.png" id="23_mx1m4"]
+[ext_resource type="Texture2D" uid="uid://ctr4id3y28huw" path="res://Sprites/MC/walking anim/idle_right_walk_2.png" id="24_4gjji"]
+[ext_resource type="Texture2D" uid="uid://c3t6ktpbalrg4" path="res://Sprites/MC/walking anim/idle_back_2.png" id="25_u2ulf"]
+[ext_resource type="Texture2D" uid="uid://c0f77e3s8lami" path="res://Sprites/MC/walking anim/idle_back_walk_1.png" id="26_6e8lb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_13qdw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ur7pv")
+"texture": ExtResource("3_y4r1p")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_y4r1p")
+"texture": ExtResource("2_ur7pv")
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_d2wvv")
@@ -55,6 +71,84 @@ animations = [{
 "loop": 1,
 "name": &"idle",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_bj30b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jc3p3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hax0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_t4otl")
+}],
+"loop": 1,
+"name": &"lutz",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_j2b1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_cs1tg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_2dvfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_giy8y")
+}],
+"loop": 1,
+"name": &"spin",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_fdfoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_hhpqf")
+}],
+"loop": 1,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_g5jhy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_holxr")
+}],
+"loop": 1,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_mx1m4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_4gjji")
+}],
+"loop": 1,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_u2ulf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_6e8lb")
+}],
+"loop": 1,
+"name": &"walk_up",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
@@ -90,7 +184,7 @@ wave_enemy_position = NodePath("Path2D/PathFollow2D/Marker2D")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1560810833]
 scale = Vector2(0.16, 0.16)
 sprite_frames = SubResource("SpriteFrames_13qdw")
-animation = &"idle"
+animation = &"walk_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=414563548]
 position = Vector2(2.9802322e-08, 0.50000244)

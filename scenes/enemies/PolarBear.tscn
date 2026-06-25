@@ -1,24 +1,46 @@
 [gd_scene format=3 uid="uid://dq1evqwi81vm"]
 
-[ext_resource type="Texture2D" uid="uid://kehe566fjrhy" path="res://Placeholders/icon.svg" id="1_56c8a"]
-[ext_resource type="Script" uid="uid://k23egh2tf6vi" path="res://Scripts/enemyscripts/enemy.gd" id="1_to6rm"]
-[ext_resource type="Script" uid="uid://wbcb6tgmlxnp" path="res://Resources/EnemyStats.gd" id="2_07gxv"]
+[ext_resource type="Script" uid="uid://d2j2bsvhkv6q1" path="res://Scripts/enemyscripts/polar_bear.gd" id="1_48jrj"]
+[ext_resource type="Texture2D" uid="uid://djmmkfqr1l80m" path="res://Sprites/Enemies/Bear/bear_2_left.png" id="3_cajnv"]
+[ext_resource type="Texture2D" uid="uid://xxh11l1xdrr7" path="res://Sprites/Enemies/Bear/bear_left.png" id="4_2fnbs"]
+[ext_resource type="Texture2D" uid="uid://cmh86n71bx27e" path="res://Sprites/Enemies/Bear/bear_2.png" id="5_1ank7"]
+[ext_resource type="Texture2D" uid="uid://btptpo6yejxof" path="res://Sprites/Enemies/Bear/bear_.png" id="6_5fobk"]
 
-[sub_resource type="Resource" id="Resource_2x7jd"]
-script = ExtResource("2_07gxv")
-hp = 500
-atk_dmg = 50
-max_speed = 20
-curr_speed = 20
-knockback_resistance = 1.0
-cost = 30
-metadata/_custom_type_script = "uid://wbcb6tgmlxnp"
+[sub_resource type="SpriteFrames" id="SpriteFrames_ifpyu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cajnv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2fnbs")
+}],
+"loop": 1,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_1ank7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5fobk")
+}],
+"loop": 1,
+"name": &"walk_right",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ifpyu"]
+radius = 287.56793
 
 [node name="PolarBear" type="CharacterBody2D" unique_id=344848122]
-script = ExtResource("1_to6rm")
-stats = SubResource("Resource_2x7jd")
+scale = Vector2(0.16, 0.16)
+script = ExtResource("1_48jrj")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=717278958]
-position = Vector2(3, -3.8146973e-06)
-scale = Vector2(2.625, 0.6484375)
-texture = ExtResource("1_56c8a")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2065400979]
+sprite_frames = SubResource("SpriteFrames_ifpyu")
+animation = &"walk_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1531058405]
+shape = SubResource("CircleShape2D_ifpyu")

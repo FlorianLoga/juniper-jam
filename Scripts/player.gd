@@ -41,13 +41,20 @@ func movement(delta: float):
 		Input.get_action_strength("right") - Input.get_action_strength("left"),
 		Input.get_action_strength("down") - Input.get_action_strength("up")
 	).normalized()
-	 
-	if input:
-		pass
-		#print("play the walk anim")
-	else: 
+	
+	if input.length() > 0:
+		if abs(input.x) > abs(input.y):
+			if input.x > 0:
+				sprite.play("walk_right")
+			else:
+				sprite.play("walk_left")
+		else:
+			if input.y > 0:
+				sprite.play("walk_down")
+			else:
+				sprite.play("walk_up")
+	else:
 		sprite.play("idle")
-		#print("play the idle anim")
 	
 	var lerp_weight = delta * (acceleration if input else friction)
 	velocity = lerp(velocity, input * max_speed, lerp_weight)
