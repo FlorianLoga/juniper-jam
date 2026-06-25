@@ -1,6 +1,6 @@
 extends Enemy
 
-class_name HockJock
+class_name PolarBear
 @onready var navigation_agent_2d: NavigationAgent2D = $NavigationAgent2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 #initializing variables

@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://kehe566fjrhy" path="res://Placeholders/icon.svg" id="1_7p1mj"]
 [ext_resource type="Script" uid="uid://bse0ekdgxy8gu" path="res://Scripts/enemy.gd" id="1_md0e3"]
-[ext_resource type="Resource" uid="uid://chj2sl4cv31tn" path="res://Resources/TimeScale/time_scaler.tres" id="2_4ra3w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
 radius = 12.0

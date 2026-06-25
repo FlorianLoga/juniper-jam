@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://csmcj43oins0r" path="res://scenes/enemies/HockJock.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://d1mtjl7ora2tx" path="res://scenes/enemies/EnemySpawner.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dq1evqwi81vm" path="res://scenes/enemies/PolarBear.tscn" id="5_o6xl0"]
-[ext_resource type="Texture2D" uid="uid://kehe566fjrhy" path="res://Placeholders/icon.svg" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://dmv36odapk15g" path="res://scenes/enemies/Sharknado.tscn" id="6_tipki"]
 [ext_resource type="Script" uid="uid://co864wqb3y32l" path="res://Resources/waves/wave_info.gd" id="7_85g3d"]
 [ext_resource type="Resource" uid="uid://dme2alq1w1hwu" path="res://Resources/waves/test_wave.tres" id="8_choun"]
+[ext_resource type="Resource" uid="uid://bwo8fc8f2lunr" path="res://Resources/test.tres" id="9_85g3d"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_sugp2"]
 vertices = PackedVector2Array(451.4297, 384.92188, 1057.6016, 548.85156, 83.171875, 535.1406, 308, 386.07813, 90.82031, 101.92969, 308, 249.17188, 1040.3672, 96.046875, 445.57813, 246.84375)
@@ -16,11 +16,6 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(81, 92, 73, 545, 1068, 559, 1050, 86), PackedVector2Array(318, 259, 436, 257, 441, 375, 318, 376), PackedVector2Array(638, 259, 754, 259, 758, 372, 642, 375)])
 parsed_geometry_type = 1
 source_geometry_group_name = &"navigation"
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jyhfs"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgi4"]
-size = Vector2(122, 120)
 
 [node name="main" type="Node2D" unique_id=48790755]
 
@@ -41,41 +36,19 @@ waves = Array[ExtResource("7_85g3d")]([ExtResource("8_choun"), null, null])
 [node name="Sharknado" parent="EnemySpawner" unique_id=409184938 instance=ExtResource("6_tipki")]
 process_mode = 4
 position = Vector2(-948, 136)
+stats = ExtResource("9_85g3d")
 
 [node name="PolarBear" parent="EnemySpawner" unique_id=344848122 instance=ExtResource("5_o6xl0")]
 process_mode = 4
 position = Vector2(-816, -154)
+stats = ExtResource("9_85g3d")
 
 [node name="HockJock" parent="EnemySpawner" unique_id=1652384883 instance=ExtResource("3_sugp2")]
 process_mode = 4
 position = Vector2(-178, -203)
-scale = Vector2(1, 1)
+scale = Vector2(0.13117021, 0.14384301)
 motion_mode = 0
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=2100808560]
 position = Vector2(19, -4)
 navigation_polygon = SubResource("NavigationPolygon_sugp2")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1451630558 groups=["navigation"]]
-position = Vector2(384, 228)
-physics_material_override = SubResource("PhysicsMaterial_jyhfs")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1375858407]
-position = Vector2(14, 85)
-texture = ExtResource("5_tbgi4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2014232942]
-position = Vector2(14, 85)
-shape = SubResource("RectangleShape2D_tbgi4")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=2115755949 groups=["navigation"]]
-position = Vector2(704, 228)
-physics_material_override = SubResource("PhysicsMaterial_jyhfs")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=1267047327]
-position = Vector2(14, 85)
-texture = ExtResource("5_tbgi4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1492434349]
-position = Vector2(14, 85)
-shape = SubResource("RectangleShape2D_tbgi4")

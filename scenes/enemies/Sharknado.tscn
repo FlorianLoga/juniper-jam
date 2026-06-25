@@ -1,24 +1,48 @@
 [gd_scene format=3 uid="uid://dmv36odapk15g"]
 
-[ext_resource type="Script" uid="uid://k23egh2tf6vi" path="res://Scripts/enemyscripts/enemy.gd" id="1_a1bhn"]
-[ext_resource type="Texture2D" uid="uid://kehe566fjrhy" path="res://Placeholders/icon.svg" id="1_vvqeg"]
-[ext_resource type="Script" uid="uid://wbcb6tgmlxnp" path="res://Resources/EnemyStats.gd" id="2_adob7"]
+[ext_resource type="Script" uid="uid://xc3lvpp0yjuy" path="res://Scripts/enemyscripts/sharknado.gd" id="1_8kei1"]
+[ext_resource type="Texture2D" uid="uid://e1lbyvwbf14p" path="res://Sprites/Enemies/Sharknado/sharknado1.png" id="3_8mauw"]
+[ext_resource type="Texture2D" uid="uid://s43ynsuk2k1" path="res://Sprites/Enemies/Sharknado/sharknado4.png" id="4_b8cjm"]
+[ext_resource type="Texture2D" uid="uid://d3s0vqok6fwux" path="res://Sprites/Enemies/Sharknado/sharknado2.png" id="5_0yeeg"]
+[ext_resource type="Texture2D" uid="uid://b05mslxcgu36m" path="res://Sprites/Enemies/Sharknado/sharknado3.png" id="6_cmm8x"]
 
-[sub_resource type="Resource" id="Resource_87njv"]
-script = ExtResource("2_adob7")
-hp = 2000
-atk_dmg = 100
-max_speed = 70
-curr_speed = 70
-knockback_resistance = 1.0
-cost = 50
-metadata/_custom_type_script = "uid://wbcb6tgmlxnp"
+[sub_resource type="SpriteFrames" id="SpriteFrames_ifpyu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8mauw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b8cjm")
+}],
+"loop": 1,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_0yeeg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cmm8x")
+}],
+"loop": 1,
+"name": &"walk_right",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ifpyu"]
+radius = 237.5
+height = 987.5
 
 [node name="Sharknado" type="CharacterBody2D" unique_id=409184938]
-script = ExtResource("1_a1bhn")
-stats = SubResource("Resource_87njv")
+scale = Vector2(0.16, 0.16)
+script = ExtResource("1_8kei1")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=997641472]
-rotation = 0.87639636
-scale = Vector2(2.2053025, 1.9052966)
-texture = ExtResource("1_vvqeg")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1086406569]
+sprite_frames = SubResource("SpriteFrames_ifpyu")
+animation = &"walk_right"
+frame_progress = 0.5387959
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=870780796]
+shape = SubResource("CapsuleShape2D_ifpyu")
