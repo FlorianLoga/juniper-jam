@@ -110,7 +110,7 @@ shape = SubResource("RectangleShape2D_13qdw")
 libraries/ = SubResource("AnimationLibrary_fulsm")
 
 [node name="ShurikenSpawner" parent="." unique_id=1000780227 instance=ExtResource("10_y4r1p")]
-radius = 200.0
+radius = 2000.0
 horizontal_angle = 10.0
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1861426023]
