@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://ctr4id3y28huw" path="res://Sprites/MC/walking anim/idle_right_walk_2.png" id="24_4gjji"]
 [ext_resource type="Texture2D" uid="uid://c3t6ktpbalrg4" path="res://Sprites/MC/walking anim/idle_back_2.png" id="25_u2ulf"]
 [ext_resource type="Texture2D" uid="uid://c0f77e3s8lami" path="res://Sprites/MC/walking anim/idle_back_walk_1.png" id="26_6e8lb"]
+[ext_resource type="Script" uid="uid://08ac5a2cpotc" path="res://Scripts/player_camera.gd" id="28_hax0n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_13qdw"]
 animations = [{
@@ -194,7 +195,7 @@ scale = Vector2(0.07039983, 0.051200133)
 shape = SubResource("RectangleShape2D_xrivr")
 
 [node name="PlayerCamera" type="Camera2D" parent="." unique_id=1103006166]
-script = ExtResource("12_i4ail")
+script = ExtResource("28_hax0n")
 
 [node name="Path2D" type="Path2D" parent="." unique_id=1867554208]
 curve = SubResource("Curve2D_g2els")
