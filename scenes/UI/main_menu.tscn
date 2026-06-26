@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://cawtv1l7pif7l"]
+
+[ext_resource type="Script" uid="uid://bnu0tcrucla4a" path="res://Scripts/UI/main_menu.gd" id="1_yonvy"]
+[ext_resource type="Texture2D" uid="uid://cxvd3qp5cgaqj" path="res://Sprites/UI/Main Menu/menu.png" id="2_e2p27"]
+[ext_resource type="Script" uid="uid://dow6oemof7unt" path="res://Scripts/UI/scene_switcher.gd" id="3_5jstl"]
+[ext_resource type="Texture2D" uid="uid://c7thascxoxp4g" path="res://Sprites/UI/Main Menu/play.png" id="4_ngj32"]
+[ext_resource type="PackedScene" uid="uid://bhm5xkhsb3n7c" path="res://scenes/UI/options_panel.tscn" id="4_tfcbk"]
+[ext_resource type="Texture2D" uid="uid://0iu873cuos4s" path="res://Sprites/UI/Main Menu/settings.png" id="5_bm8t2"]
+[ext_resource type="Texture2D" uid="uid://84b3t3rcein8" path="res://Sprites/UI/Main Menu/quit.png" id="6_5d4ag"]
+
+[node name="MainMenu" type="CanvasLayer" unique_id=1537268060]
+script = ExtResource("1_yonvy")
+start_scene_path = "res://scenes/main.tscn"
+
+[node name="MenuScreen" type="TextureRect" parent="." unique_id=751604360]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_e2p27")
+
+[node name="ButtonManager" type="Control" parent="MenuScreen" unique_id=458316104]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="Button" parent="MenuScreen/ButtonManager" unique_id=885181312]
+self_modulate = Color(18.892157, 18.892157, 18.892157, 0)
+layout_mode = 0
+offset_left = 941.0
+offset_top = 637.0
+offset_right = 1122.0
+offset_bottom = 714.0
+script = ExtResource("3_5jstl")
+
+[node name="TextureRect" type="TextureRect" parent="MenuScreen/ButtonManager/Start" unique_id=536166319]
+layout_mode = 0
+offset_right = 181.0
+offset_bottom = 77.0
+texture = ExtResource("4_ngj32")
+
+[node name="Options" type="Button" parent="MenuScreen/ButtonManager" unique_id=1329410631]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 941.0
+offset_top = 774.0
+offset_right = 1122.0
+offset_bottom = 856.0
+text = "OPTIONS"
+script = ExtResource("3_5jstl")
+
+[node name="TextureRect" type="TextureRect" parent="MenuScreen/ButtonManager/Options" unique_id=2076677976]
+layout_mode = 0
+offset_left = -64.0
+offset_right = 258.0
+offset_bottom = 83.0
+texture = ExtResource("5_bm8t2")
+
+[node name="Quit" type="Button" parent="MenuScreen/ButtonManager" unique_id=1811955145]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 941.0
+offset_top = 914.0
+offset_right = 1122.0
+offset_bottom = 993.0
+text = "QUIT"
+script = ExtResource("3_5jstl")
+
+[node name="TextureRect" type="TextureRect" parent="MenuScreen/ButtonManager/Quit" unique_id=1021166314]
+layout_mode = 0
+offset_right = 181.0
+offset_bottom = 79.0
+texture = ExtResource("6_5d4ag")
+
+[node name="OptionsPanel" parent="." unique_id=355889237 instance=ExtResource("4_tfcbk")]
+visible = false
+offset_top = -131.0
+offset_bottom = 350.0
+
+[connection signal="pressed" from="MenuScreen/ButtonManager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MenuScreen/ButtonManager/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MenuScreen/ButtonManager/Quit" to="." method="_on_quit_pressed"]
