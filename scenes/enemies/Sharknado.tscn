@@ -108,8 +108,8 @@ anim_player = NodePath("hitFlashAnim")
 material = SubResource("ShaderMaterial_7gwn4")
 sprite_frames = SubResource("SpriteFrames_ifpyu")
 animation = &"spin"
-frame = 3
-frame_progress = 0.6889863
+frame = 1
+frame_progress = 0.9503016
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=870780796]
 shape = SubResource("CapsuleShape2D_ifpyu")

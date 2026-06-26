@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://cm3q3pfiy5qdx"]
+
+[ext_resource type="Texture2D" uid="uid://bdunxa020b2l1" path="res://Sprites/patinoar_sad.png" id="1_ndwym"]
+[ext_resource type="Script" uid="uid://bn07b4djxas35" path="res://Scripts/UI/credits_scene.gd" id="1_yrvx2"]
+[ext_resource type="FontFile" uid="uid://c1xqdqs6pucvw" path="res://Sprites/font/Asimovian-Regular.ttf" id="2_ndwym"]
+[ext_resource type="Script" uid="uid://dow6oemof7unt" path="res://Scripts/UI/scene_switcher.gd" id="3_l3i3o"]
+[ext_resource type="Texture2D" uid="uid://6e0vad6stxdy" path="res://Sprites/UI/Main Menu/close - Copy.png" id="5_yrvx2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ckr0i"]
+font = ExtResource("2_ndwym")
+
+[node name="Credits" type="Control" unique_id=1229634084]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_yrvx2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1735583617]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1003959432]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -628.5
+offset_top = -342.5
+offset_right = 628.5
+offset_bottom = 342.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_ndwym")
+
+[node name="Luci" type="Label" parent="CanvasLayer" unique_id=228913112]
+offset_left = 326.0
+offset_top = 231.0
+offset_right = 432.0
+offset_bottom = 254.0
+scale = Vector2(2.61, 2.61)
+text = "Programming"
+label_settings = SubResource("LabelSettings_ckr0i")
+
+[node name="Bie" type="Label" parent="CanvasLayer" unique_id=407827247]
+offset_left = 326.0
+offset_top = 470.0
+offset_right = 444.0
+offset_bottom = 493.0
+scale = Vector2(2.61, 2.61)
+text = "Game Design"
+
+[node name="Nat" type="Label" parent="CanvasLayer" unique_id=245736103]
+offset_left = 326.0
+offset_top = 595.0
+offset_right = 366.0
+offset_bottom = 618.0
+scale = Vector2(2.61, 2.61)
+text = "UI"
+
+[node name="Dani" type="Label" parent="CanvasLayer" unique_id=1615857273]
+offset_left = 326.0
+offset_top = 728.0
+offset_right = 432.0
+offset_bottom = 751.0
+scale = Vector2(2.61, 2.61)
+text = "Sound Design"
+
+[node name="Flo" type="Label" parent="CanvasLayer" unique_id=110640745]
+offset_left = 326.0
+offset_top = 340.0
+offset_right = 416.0
+offset_bottom = 363.0
+scale = Vector2(2.61, 2.61)
+text = "Art"
+
+[node name="quit" type="Button" parent="CanvasLayer/Flo" unique_id=407983912]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 464.75098
+offset_top = 181.22606
+offset_right = 531.0345
+offset_bottom = 212.22606
+text = "Quit
+"
+script = ExtResource("3_l3i3o")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Flo/quit" unique_id=1752143215]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.141777
+offset_top = -15.5
+offset_right = 32.406136
+offset_bottom = 14.0
+texture = ExtResource("5_yrvx2")
+expand_mode = 1
+
+[connection signal="pressed" from="CanvasLayer/Flo/quit" to="." method="_on_quit_pressed"]
