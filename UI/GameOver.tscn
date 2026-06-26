@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://0nloaxjmn7l2"]
 
 [ext_resource type="Script" uid="uid://cl2mmipffyiov" path="res://UI/ui scripts/game_over.gd" id="1_kjexa"]
+[ext_resource type="Texture2D" uid="uid://bdunxa020b2l1" path="res://Sprites/patinoar_sad.png" id="2_3pwoa"]
 [ext_resource type="Texture2D" uid="uid://dk7g78fvg81s7" path="res://Sprites/UI/GameOver/gameover.png" id="2_vjbsa"]
 [ext_resource type="FontFile" uid="uid://c1xqdqs6pucvw" path="res://Sprites/font/Asimovian-Regular.ttf" id="2_vohf5"]
 
@@ -33,21 +34,29 @@ http_request = NodePath("HTTPRequest")
 submit = NodePath("HBoxContainer/submit")
 score_label = NodePath("score_label")
 
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1315322915]
+layout_mode = 0
+offset_left = -35.0
+offset_top = -28.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_3pwoa")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=775167578]
 layout_mode = 0
-offset_left = 746.0
-offset_top = 653.0
-offset_right = 1088.0
-offset_bottom = 693.0
-
-[node name="submit" type="Button" parent="HBoxContainer" unique_id=774336865]
-layout_mode = 2
-text = "Submit your score!"
+offset_left = 714.0
+offset_top = 693.0
+offset_right = 1056.0
+offset_bottom = 733.0
 
 [node name="to leaderboard" type="Button" parent="HBoxContainer" unique_id=1639345933]
 layout_mode = 2
 text = "See Leaderboard
 "
+
+[node name="submit" type="Button" parent="HBoxContainer" unique_id=774336865]
+layout_mode = 2
+text = "Submit your score!"
 
 [node name="quit" type="Button" parent="HBoxContainer" unique_id=1197129255]
 layout_mode = 2
@@ -78,7 +87,9 @@ grow_vertical = 2
 
 [node name="Label2" type="Label" parent="VBoxContainer" unique_id=1603318197]
 layout_mode = 2
-text = "your score:"
+theme_override_colors/font_color = Color(0.54901963, 0.06666667, 0.019607844, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+text = "Your score:"
 label_settings = SubResource("LabelSettings_gdkj6")
 
 [node name="Label3" type="Label" parent="VBoxContainer" unique_id=684369790]
@@ -100,12 +111,15 @@ offset_bottom = 606.0
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 318.0
+offset_left = 333.0
+offset_top = 163.0
+offset_right = -422.0
+offset_bottom = 370.0
 grow_horizontal = 2
 texture = ExtResource("2_vjbsa")
 
-[connection signal="pressed" from="HBoxContainer/submit" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="HBoxContainer/to leaderboard" to="." method="_on_to_leaderboard_pressed"]
+[connection signal="pressed" from="HBoxContainer/submit" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="HBoxContainer/quit" to="." method="_on_quit_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
 [connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]

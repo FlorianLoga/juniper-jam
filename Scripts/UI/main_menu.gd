@@ -7,6 +7,7 @@ extends CanvasLayer
 @onready var options_panel = $OptionsPanel
 @onready var start: Button = $MenuScreen/ButtonManager/Start
 @onready var quit: Button = $MenuScreen/ButtonManager/Quit
+@export var credits_scene_path : String
 
 func _ready() -> void:
 	options_panel.visible = false
@@ -32,6 +33,9 @@ func _on_options_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+	
+func _on_credits_pressed() -> void:
+	get_tree().change_scene_to_file(credits_scene_path)
 	
 func reset_progress():
 	time_scaler.time_scale = 1.0

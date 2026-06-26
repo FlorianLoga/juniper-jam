@@ -9,12 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://bhm5xkhsb3n7c" path="res://scenes/UI/options_panel.tscn" id="4_tfcbk"]
 [ext_resource type="Texture2D" uid="uid://0iu873cuos4s" path="res://Sprites/UI/Main Menu/settings.png" id="5_bm8t2"]
 [ext_resource type="Texture2D" uid="uid://84b3t3rcein8" path="res://Sprites/UI/Main Menu/quit.png" id="6_5d4ag"]
+[ext_resource type="Texture2D" uid="uid://i6royxgfc2o0" path="res://Sprites/UI/Main Menu/credits.png" id="9_mf7fl"]
 
 [node name="MainMenu" type="CanvasLayer" unique_id=1537268060]
 script = ExtResource("1_yonvy")
 combat_stats = ExtResource("2_um6dh")
 time_scaler = ExtResource("3_mf7fl")
 start_scene_path = "res://scenes/main.tscn"
+credits_scene_path = "res://scenes/UI/credits_scene.tscn"
 
 [node name="MenuScreen" type="TextureRect" parent="." unique_id=751604360]
 anchors_preset = 8
@@ -83,6 +85,29 @@ offset_right = 181.0
 offset_bottom = 79.0
 texture = ExtResource("6_5d4ag")
 
+[node name="Credits" type="Button" parent="MenuScreen/ButtonManager" unique_id=514795802]
+self_modulate = Color(18.892157, 18.892157, 18.892157, 0)
+layout_mode = 0
+offset_left = 67.0
+offset_top = 993.0
+offset_right = 248.0
+offset_bottom = 1070.0
+script = ExtResource("3_5jstl")
+
+[node name="TextureRect" type="TextureRect" parent="MenuScreen/ButtonManager/Credits" unique_id=1750747388]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.5
+offset_top = -38.5
+offset_right = 90.5
+offset_bottom = 38.5
+texture = ExtResource("9_mf7fl")
+expand_mode = 1
+
 [node name="OptionsPanel" parent="." unique_id=355889237 instance=ExtResource("4_tfcbk")]
 visible = false
 offset_top = -131.0
@@ -91,3 +116,4 @@ offset_bottom = 350.0
 [connection signal="pressed" from="MenuScreen/ButtonManager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MenuScreen/ButtonManager/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MenuScreen/ButtonManager/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MenuScreen/ButtonManager/Credits" to="." method="_on_credits_pressed"]
