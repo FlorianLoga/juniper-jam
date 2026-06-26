@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://bob7mqib6f4xf"]
+
+[ext_resource type="FontFile" uid="uid://6xoic0h207fr" path="res://Sprites/font/Jacquard12-Regular.ttf" id="1_lhcf8"]
+
+[resource]
+font = ExtResource("1_lhcf8")
+font_size = 40

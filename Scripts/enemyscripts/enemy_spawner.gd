@@ -29,7 +29,7 @@ func generate_wave():
 	spawn_wave(curr_wave_val)
 	curr_wave += 1
 	waves[0].wave_duration *= 1.2
-	
+	#aici pune functia de upgrade
 	wave_timer.wait_time = waves[0].wave_duration
 	wave_timer.start()
 	print("DURATION UNTIL NEXT WAVE: ", wave_timer.wait_time)
@@ -47,13 +47,16 @@ func spawn_wave(val : int):
 		var rand_id : int = randi_range(0, available_enemies.size() -1)
 		var rand_enemy_scene = available_enemies[rand_id]
 		var rand_cost : int = cost_arr[rand_enemy_scene].stats.cost
-		
+		#cost_arr[rand_enemy_scene].stats.hp += 10
+		#for enemies in cost_arr:
+			#print("hps of the ens are: ",cost_arr[enemies].stats.hp)
 		generated_enemies.append(rand_enemy_scene)
 		val -= rand_cost
 	print("nr of enemies in the wave are: ", generated_enemies.size())
-
+	
 	for enemy in generated_enemies:
 		wave_spawn(enemy)
+		
 	#wave_spawned.emit()
 	#await get_tree().create_timer(waves[0].wave_duration).timeout
 
