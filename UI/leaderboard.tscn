@@ -1,6 +1,17 @@
 [gd_scene format=3 uid="uid://gcbk1f2nbtgi"]
 
 [ext_resource type="Script" uid="uid://dpiunma7v8ktc" path="res://UI/ui scripts/leaderboard.gd" id="1_27m2f"]
+[ext_resource type="FontFile" uid="uid://c1xqdqs6pucvw" path="res://Sprites/font/Asimovian-Regular.ttf" id="2_ksej1"]
+[ext_resource type="LabelSettings" uid="uid://de7jbasgecuk3" path="res://Resources/leaderboard_settings.tres" id="3_nnvod"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cwhak"]
+font = ExtResource("2_ksej1")
+font_size = 48
+font_color = Color(0.8235294, 0.078431375, 0.43529412, 1)
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 13
+shadow_color = Color(0.38039216, 0.11764706, 0.14509805, 1)
 
 [node name="leaderboard" type="Control" unique_id=1525802796 node_paths=PackedStringArray("vbox")]
 layout_mode = 3
@@ -15,16 +26,14 @@ vbox = NodePath("VBoxContainer")
 
 [node name="Label" type="Label" parent="." unique_id=1086147818]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -237.0
-offset_top = 25.000004
-offset_right = -43.0
-offset_bottom = 48.000004
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -1132.2053
+offset_bottom = 63.0
 grow_horizontal = 2
 scale = Vector2(2.4866884, 2.9724326)
 text = "GLOBAL LEADERBOARD"
+label_settings = SubResource("LabelSettings_cwhak")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1819221184]
 layout_mode = 1
@@ -37,7 +46,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=839055892]
-visible = false
 layout_mode = 2
 text = "test: 
 "
+label_settings = ExtResource("3_nnvod")

@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://de7jbasgecuk3"]
+
+[ext_resource type="FontFile" uid="uid://c1xqdqs6pucvw" path="res://Sprites/font/Asimovian-Regular.ttf" id="1_6uhna"]
+
+[resource]
+font = ExtResource("1_6uhna")
+font_size = 28
+font_color = Color(0.11636094, 0.4350781, 0.8979331, 1)
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)

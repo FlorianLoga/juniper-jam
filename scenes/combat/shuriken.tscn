@@ -5,6 +5,8 @@
 [ext_resource type="Resource" uid="uid://dael080ppeurw" path="res://Resources/combat/combat_stats.tres" id="2_rq8vh"]
 [ext_resource type="Texture2D" uid="uid://cfbgj3ai28c7r" path="res://Sprites/MC/shuriken.png" id="3_kp4el"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xrivr"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_kp4el"]
 radius = 8.000772
 
@@ -14,6 +16,7 @@ combat_stats = ExtResource("2_rq8vh")
 time_scaler = ExtResource("2_kp4el")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1168328905]
+material = SubResource("ShaderMaterial_xrivr")
 position = Vector2(-4.7683716e-07, -4.7683716e-07)
 scale = Vector2(0.01917668, 0.018807977)
 texture = ExtResource("3_kp4el")
@@ -24,6 +27,8 @@ texture = ExtResource("3_kp4el")
 position = Vector2(-1.9073486e-06, 0.11111069)
 scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("CircleShape2D_kp4el")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1944320445]
 
 [connection signal="area_entered" from="HitboxArea" to="." method="_on_hitbox_area_area_entered"]
 [connection signal="body_entered" from="HitboxArea" to="." method="_on_hitbox_area_body_entered"]

@@ -5,6 +5,7 @@ var api_key := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJ
 
 var http_request : HTTPRequest
 @export var vbox : VBoxContainer
+@onready var leaderboard_visuals : LabelSettings = preload("res://Resources/leaderboard_settings.tres")
 
 func _ready() -> void:
 	http_request = HTTPRequest.new()
@@ -37,5 +38,6 @@ func _on_http_request_request_completed(result: int, response_code: int, headers
 	for i in range(min(10, scores.size())):
 		var entry = scores[i]
 		var label = Label.new()
+		label.label_settings = leaderboard_visuals
 		label.text = "%d. %s - %d" % [i + 1, entry["player_name"], int(entry["score"])]
 		vbox.add_child(label)

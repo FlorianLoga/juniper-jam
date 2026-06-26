@@ -2,12 +2,29 @@
 
 [ext_resource type="Script" uid="uid://cl2mmipffyiov" path="res://UI/ui scripts/game_over.gd" id="1_kjexa"]
 [ext_resource type="Texture2D" uid="uid://dk7g78fvg81s7" path="res://Sprites/UI/GameOver/gameover.png" id="2_vjbsa"]
+[ext_resource type="FontFile" uid="uid://c1xqdqs6pucvw" path="res://Sprites/font/Asimovian-Regular.ttf" id="2_vohf5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kivsr"]
+font = ExtResource("2_vohf5")
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_gdkj6"]
+font = ExtResource("2_vohf5")
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_faeep"]
+font = ExtResource("2_vohf5")
+font_size = 28
 
 [node name="Control" type="Control" unique_id=1521952163 node_paths=PackedStringArray("http_request", "submit", "score_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 33.0
+offset_top = 8.0
+offset_right = 33.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kjexa")
@@ -18,10 +35,10 @@ score_label = NodePath("score_label")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=775167578]
 layout_mode = 0
-offset_left = 890.5
-offset_top = 524.5
-offset_right = 930.5
-offset_bottom = 564.5
+offset_left = 746.0
+offset_top = 653.0
+offset_right = 1088.0
+offset_bottom = 693.0
 
 [node name="submit" type="Button" parent="HBoxContainer" unique_id=774336865]
 layout_mode = 2
@@ -39,26 +56,11 @@ text = "Quit
 
 [node name="score_label" type="Label" parent="." unique_id=1773736262]
 layout_mode = 0
-offset_left = 880.0
-offset_top = 544.0
-offset_right = 981.0
-offset_bottom = 572.0
-
-[node name="Label" type="Label" parent="." unique_id=947200720]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -267.5
-offset_top = -68.25
-offset_right = 267.5
-offset_bottom = 68.25
-grow_horizontal = 2
-grow_vertical = 2
-text = "YOU DIED"
-horizontal_alignment = 1
+offset_left = 896.0
+offset_top = 539.0
+offset_right = 997.0
+offset_bottom = 567.0
+label_settings = SubResource("LabelSettings_kivsr")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1560325322]
 layout_mode = 1
@@ -77,20 +79,22 @@ grow_vertical = 2
 [node name="Label2" type="Label" parent="VBoxContainer" unique_id=1603318197]
 layout_mode = 2
 text = "your score:"
+label_settings = SubResource("LabelSettings_gdkj6")
 
 [node name="Label3" type="Label" parent="VBoxContainer" unique_id=684369790]
 layout_mode = 2
 size_flags_vertical = 8
 text = "Enter name:"
+label_settings = SubResource("LabelSettings_faeep")
 
 [node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=1477575407]
 
 [node name="LineEdit" type="LineEdit" parent="." unique_id=1255478887]
 layout_mode = 0
-offset_left = 894.0
-offset_top = 568.0
-offset_right = 962.5
-offset_bottom = 599.0
+offset_left = 929.0
+offset_top = 575.0
+offset_right = 997.5
+offset_bottom = 606.0
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=726152683]
 layout_mode = 1

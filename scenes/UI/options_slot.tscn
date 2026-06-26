@@ -2,7 +2,16 @@
 
 [ext_resource type="Script" uid="uid://muiui5yv71fe" path="res://Scripts/levelup/options_slot.gd" id="1_qwe0q"]
 [ext_resource type="Resource" uid="uid://dael080ppeurw" path="res://Resources/combat/combat_stats.tres" id="2_faeep"]
+[ext_resource type="FontFile" uid="uid://c1xqdqs6pucvw" path="res://Sprites/font/Asimovian-Regular.ttf" id="3_faeep"]
 [ext_resource type="Texture2D" uid="uid://y1ssi71qd21w" path="res://Sprites/UI/Main Menu/background.png" id="3_h8vo3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qpnma"]
+font = ExtResource("3_faeep")
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_dhue0"]
+font = ExtResource("3_faeep")
+font_size = 20
 
 [node name="OptionsSlot" type="TextureButton" unique_id=1156552935]
 custom_minimum_size = Vector2(200, 300)
@@ -15,34 +24,42 @@ script = ExtResource("1_qwe0q")
 combat_stats = ExtResource("2_faeep")
 
 [node name="NameLabel" type="Label" parent="." unique_id=546587859]
-layout_mode = 0
-offset_left = 127.0
-offset_top = 120.0
-offset_right = 173.0
-offset_bottom = 143.0
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 9.0
+offset_top = 95.0
+offset_right = 9.0
+offset_bottom = 134.0
+grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+label_settings = SubResource("LabelSettings_qpnma")
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="DescLabel" type="Label" parent="." unique_id=1033126059]
 layout_mode = 0
-offset_left = 65.0
+offset_left = 44.0
 offset_top = 234.0
-offset_right = 230.0
-offset_bottom = 259.0
+offset_right = 261.0
+offset_bottom = 260.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+label_settings = SubResource("LabelSettings_dhue0")
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=844911024]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1898916047]
 show_behind_parent = true
 custom_minimum_size = Vector2(250, 450)
-layout_mode = 0
-offset_left = -4.0
-offset_top = -3.0
-offset_right = 294.0
-offset_bottom = 447.0
+layout_mode = 1
+offset_left = 399.0
+offset_top = -4.0
+offset_right = 982.807
+offset_bottom = 486.837
+rotation = 1.5707964
 texture = ExtResource("3_h8vo3")
-region_rect = Rect2(1.328598, -7.7972107, 1256.0369, 683.82263)
+expand_mode = 1
+stretch_mode = 5
