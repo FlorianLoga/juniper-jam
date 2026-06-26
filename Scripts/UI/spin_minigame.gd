@@ -3,8 +3,9 @@ extends Control
 @onready var center: TextureRect = $Center
 @onready var orientation_label: Label = $OrientationLabel
 @onready var key_label: Label = $KeyLabel
-@onready var required_score_bar: ProgressBar = $RequiredScoreBar
-@onready var bonus_score_bar: ProgressBar = $BonusScoreBar
+@onready var required_score_bar: TextureProgressBar = $RequiredScoreBar
+@onready var bonus_score_bar: TextureProgressBar = $BonusScoreBar
+@onready var timer_bar: TextureProgressBar = $TimerBar
 
 @export var total_required_rotation : float = 50.0
 @export var duration := 5.0
@@ -27,6 +28,8 @@ func _ready():
 	generate_random()
 	
 	required_score_bar.max_value = total_required_rotation
+	timer_bar.max_value = duration
+	timer_bar.value = duration
 	
 	orientation_label.text = "clockwise" if required_orientation > 0 else "counterclockwise"
 	center.flip_h = required_orientation < 0
@@ -45,6 +48,7 @@ func generate_random():
 
 func _process(delta):
 	elapsed += delta
+	timer_bar.value = duration - elapsed
 
 	var angle = (
 		get_global_mouse_position() - center_global_position
