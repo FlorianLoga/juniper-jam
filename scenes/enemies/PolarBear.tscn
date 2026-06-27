@@ -2,26 +2,13 @@
 
 [ext_resource type="Script" uid="uid://d2j2bsvhkv6q1" path="res://Scripts/enemyscripts/polar_bear.gd" id="1_48jrj"]
 [ext_resource type="Resource" uid="uid://chj2sl4cv31tn" path="res://Resources/TimeScale/time_scaler.tres" id="2_cajnv"]
-[ext_resource type="Script" uid="uid://wbcb6tgmlxnp" path="res://Resources/EnemyStats.gd" id="3_33t3x"]
+[ext_resource type="Resource" uid="uid://ordhv6d3e8vb" path="res://Resources/enemystats/PolarBear.tres" id="3_5fobk"]
 [ext_resource type="Shader" uid="uid://cx0fddkbj7hwc" path="res://Shaders/hit.gdshader" id="5_7gwn4"]
 [ext_resource type="Texture2D" uid="uid://csybx3cwx1wej" path="res://Sprites/Enemies/re-bear/bear_left_1.png" id="6_7gwn4"]
 [ext_resource type="Texture2D" uid="uid://deioru4jc5gm8" path="res://Sprites/Enemies/re-bear/bear_left_2.png" id="7_33t3x"]
 [ext_resource type="Texture2D" uid="uid://bmjut3cim3te0" path="res://Sprites/Enemies/re-bear/bear_right1.png" id="8_7gwn4"]
 [ext_resource type="PackedScene" uid="uid://tmhc6a0k2mc2" path="res://scenes/UI/HealthBar.tscn" id="9_5fobk"]
 [ext_resource type="Texture2D" uid="uid://bc0jc2cevdhse" path="res://Sprites/Enemies/re-bear/bear_right_2.png" id="9_33t3x"]
-
-[sub_resource type="Resource" id="Resource_a6v2h"]
-script = ExtResource("3_33t3x")
-hp = 100
-atk_dmg = 50
-max_speed = 68
-curr_speed = 68
-knockback_resistance = 5.0
-cost = 10
-score_points = 500
-hp_multiplier = 1.1
-atk_multiplier = 0.6
-metadata/_custom_type_script = "uid://wbcb6tgmlxnp"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xrivr"]
 resource_local_to_scene = true
@@ -105,7 +92,7 @@ radius = 290.3063
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_48jrj")
 time_scaler = ExtResource("2_cajnv")
-stats = SubResource("Resource_a6v2h")
+stats = ExtResource("3_5fobk")
 anim_player = NodePath("hitFlashAnim")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2065400979]
