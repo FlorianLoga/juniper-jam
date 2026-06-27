@@ -7,5 +7,5 @@ script = ExtResource("1_jnjya")
 title = "Damage UP!"
 description = "Your Shurikens deal more damage"
 stat = "damage"
-value = 1.0
+value = 20.0
 metadata/_custom_type_script = "uid://cgpc4ly5hs6ki"

@@ -2,24 +2,13 @@
 
 [ext_resource type="Script" uid="uid://xc3lvpp0yjuy" path="res://Scripts/enemyscripts/sharknado.gd" id="1_8kei1"]
 [ext_resource type="Resource" uid="uid://chj2sl4cv31tn" path="res://Resources/TimeScale/time_scaler.tres" id="2_8mauw"]
-[ext_resource type="Script" uid="uid://wbcb6tgmlxnp" path="res://Resources/EnemyStats.gd" id="3_3j6o6"]
+[ext_resource type="Resource" uid="uid://c3j3petink7i1" path="res://Resources/enemystats/Sharknado.tres" id="3_cmm8x"]
 [ext_resource type="Shader" uid="uid://cx0fddkbj7hwc" path="res://Shaders/hit.gdshader" id="5_btnri"]
 [ext_resource type="Texture2D" uid="uid://dso384q71piv" path="res://Sprites/Enemies/re-sharknado/sharknado1.png" id="6_btnri"]
 [ext_resource type="Texture2D" uid="uid://cw5sjn2ggf15t" path="res://Sprites/Enemies/re-sharknado/sharknado2.png" id="7_3j6o6"]
 [ext_resource type="Texture2D" uid="uid://b17m2jus3y3xg" path="res://Sprites/Enemies/re-sharknado/sharknado3.png" id="8_ofb7v"]
 [ext_resource type="Texture2D" uid="uid://dof1enmwn75qc" path="res://Sprites/Enemies/re-sharknado/sharknado4.png" id="9_bxsbi"]
 [ext_resource type="PackedScene" uid="uid://tmhc6a0k2mc2" path="res://scenes/UI/HealthBar.tscn" id="9_cmm8x"]
-
-[sub_resource type="Resource" id="Resource_hdw8j"]
-script = ExtResource("3_3j6o6")
-hp = 200
-atk_dmg = 100
-max_speed = 70
-curr_speed = 70
-knockback_resistance = 30.0
-cost = 100
-score_points = 1000
-metadata/_custom_type_script = "uid://wbcb6tgmlxnp"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7gwn4"]
 resource_local_to_scene = true
@@ -101,7 +90,7 @@ height = 907.9999
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_8kei1")
 time_scaler = ExtResource("2_8mauw")
-stats = SubResource("Resource_hdw8j")
+stats = ExtResource("3_cmm8x")
 anim_player = NodePath("hitFlashAnim")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1086406569]

@@ -9,52 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://dmv36odapk15g" path="res://scenes/enemies/Sharknado.tscn" id="6_tipki"]
 [ext_resource type="Script" uid="uid://co864wqb3y32l" path="res://Resources/waves/wave_info.gd" id="7_85g3d"]
 [ext_resource type="Resource" uid="uid://dme2alq1w1hwu" path="res://Resources/waves/test_wave.tres" id="8_choun"]
-[ext_resource type="Script" uid="uid://wbcb6tgmlxnp" path="res://Resources/EnemyStats.gd" id="9_85g3d"]
+[ext_resource type="Resource" uid="uid://c0a1xn2113uo4" path="res://Resources/enemystats/HockJock.tres" id="10_trceg"]
+[ext_resource type="Resource" uid="uid://ordhv6d3e8vb" path="res://Resources/enemystats/PolarBear.tres" id="11_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://0nloaxjmn7l2" path="res://UI/GameOver.tscn" id="11_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://gcbk1f2nbtgi" path="res://UI/leaderboard.tscn" id="12_eb6dy"]
+[ext_resource type="Resource" uid="uid://c3j3petink7i1" path="res://Resources/enemystats/Sharknado.tres" id="12_jkv2x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(1949.5239, 160.69818)
-
-[sub_resource type="Resource" id="Resource_eb6dy"]
-resource_local_to_scene = true
-script = ExtResource("9_85g3d")
-hp = 100
-atk_dmg = 20
-max_speed = 80
-curr_speed = 80
-knockback_resistance = 1.0
-cost = 1
-score_points = 200
-hp_multiplier = 0.75
-atk_multiplier = 0.6
-metadata/_custom_type_script = "uid://wbcb6tgmlxnp"
-
-[sub_resource type="Resource" id="Resource_xrivr"]
-script = ExtResource("9_85g3d")
-hp = 200
-atk_dmg = 50
-max_speed = 50
-curr_speed = 50
-knockback_resistance = 1.0
-cost = 3
-score_points = 500
-hp_multiplier = 1.1
-atk_multiplier = 0.78
-metadata/_custom_type_script = "uid://wbcb6tgmlxnp"
-
-[sub_resource type="Resource" id="Resource_13qdw"]
-script = ExtResource("9_85g3d")
-hp = 700
-atk_dmg = 100
-max_speed = 69
-curr_speed = 69
-knockback_resistance = 1.0
-cost = 100
-score_points = 1000
-hp_multiplier = 1.5
-atk_multiplier = 1.0
-metadata/_custom_type_script = "uid://wbcb6tgmlxnp"
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_sugp2"]
 vertices = PackedVector2Array(2745.4531, 1512.9609, -445.53125, 1503.0313, -377.4297, -2.1484375, 2663.5078, -52.828125)
@@ -123,18 +85,18 @@ wave_enemy_position = NodePath("../Path2D/PathFollow2D/Marker2D")
 process_mode = 4
 visible = false
 position = Vector2(-800, -272)
-stats = SubResource("Resource_eb6dy")
+stats = ExtResource("10_trceg")
 
 [node name="PolarBear" parent="EnemySpawner" unique_id=344848122 instance=ExtResource("5_o6xl0")]
 process_mode = 4
 visible = false
-stats = SubResource("Resource_xrivr")
+stats = ExtResource("11_a8y0u")
 
 [node name="Sharknado" parent="EnemySpawner" unique_id=409184938 instance=ExtResource("6_tipki")]
 process_mode = 4
 visible = false
 position = Vector2(-826, -317)
-stats = SubResource("Resource_13qdw")
+stats = ExtResource("12_jkv2x")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=2100808560]
 visible = false

@@ -4,4 +4,12 @@
 
 [resource]
 script = ExtResource("1_y2or7")
+hp = 100
+atk_dmg = 20
+max_speed = 80
+curr_speed = 80
+cost = 2
+score_points = 100
+hp_multiplier = 0.5
+atk_multiplier = 0.5
 metadata/_custom_type_script = "uid://wbcb6tgmlxnp"

@@ -10,6 +10,7 @@ var http_request : HTTPRequest
 
 func _ready() -> void:
 	http_request = HTTPRequest.new()
+	http_request.accept_gzip = false
 	add_child(http_request)
 	http_request.request_completed.connect(_on_http_request_request_completed)
 	fetch_leaderboard()
@@ -20,7 +21,9 @@ func fetch_leaderboard():
 	var headers = [
 		"Content-Type: application/json",
 		"apikey: " + api_key,
-		"Authorization: Bearer " + api_key
+		"Authorization: Bearer " + api_key,
+		"Cache-Control: no-cache, no-store, must-revalidate",
+		"Accept-Encoding: identity"
 	]
 	var err = http_request.request(url + "?order=score.desc&limit=10", headers, HTTPClient.METHOD_GET)
 	print("returned error code: ", err)
